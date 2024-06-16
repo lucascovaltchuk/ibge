@@ -1,0 +1,277 @@
+:root {
+    --cor-primaria: #f0f0f0;
+    --cor-secundaria: #4682b4;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    grid-template-rows: 130px 1fr 100px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header,
+footer {
+    background-color: var(--cor-secundaria);
+}
+
+footer{
+    display: flex;
+    color: var(--cor-primaria);
+    font-weight: 500;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}   
+
+main {
+    background-color: var(--cor-primaria);
+    min-height: calc(100vh - 230px);
+}
+
+header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+header>h1 {
+    color: white;
+}
+
+#search-form {
+    margin: 15px;
+    position: relative;
+    width: min-content;
+    height: min-content;
+    width: 70vw;
+    min-width: 200px;
+}
+
+hr{
+    max-width: 100ch;
+    margin: auto;
+}
+
+#search-button {
+    background-color: transparent;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    font-size: 16px;
+}
+
+#search-button:hover {
+    cursor: pointer;
+}
+
+#search-input {
+    width: 100%;
+    height: 35px;
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+}
+
+header>form {}
+
+#filtro {
+    position: absolute;
+    right: 20px;
+    bottom: 30px;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 760px) {
+    #filtro {
+        right: 10px;
+    }
+}
+
+#modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 300px;
+    width: 45vw;
+    border: none;
+    border-radius: 10px;
+}
+
+#modal-submit{
+    display: block;
+    margin: 20px auto;
+    min-width: 200px;
+    width: 90%;
+    padding: 10px 0;
+    background-color: var(--cor-secundaria);
+    color: var(--cor-primaria);
+    border: none;
+    border-radius: 5px;
+}
+
+#modal form{
+    margin: 35px 0;
+}
+
+@media screen and (max-width: 760px) {
+    #modal form {
+        grid-template-columns: 1fr;
+    }
+    
+}
+
+#modal form>div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+}
+
+@media screen and (max-width: 760px) {
+    #modal form>div {
+        grid-template-columns: 1fr;
+    }
+}
+
+#modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: bolder;
+}
+
+.modal-input-group {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    min-width: 150px;
+}
+
+.modal-input-group>label {
+    font-size: 16px;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.modal-input-group>input, .modal-input-group>select {
+    font-size: 16px;
+    padding: 10px 5px;
+    margin: 5px 0;
+    font-weight: 500;
+    border-radius: 5px;
+    border: black 1px solid;
+}
+
+#filtro-counter{
+    text-align: center;
+    position: absolute;
+    background-color: white;
+    color: var(--cor-secundaria);
+    font-size: 14px;
+    font-weight: 500;
+    width: 16px;
+    height: 16px;
+    border-radius: 100%;
+    bottom: -5px;
+    right: -7px;
+}
+
+.card{
+    margin: 40px auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 100ch;
+}
+
+.card-image{
+    width: 30%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+    aspect-ratio: 1;
+
+}
+@media screen and (max-width: 760px) {
+    .card-image{
+        width: 65%;
+    }
+    
+}
+
+
+.card-content{
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.card-tags{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.card-button{
+    background-color: var(--cor-secundaria);
+    color: white;
+    border: none;
+    padding: 10px 0px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+ul{
+    list-style: none;
+}
+
+#pagination-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px;
+}
+
+#pagination-list > li > button{
+    border: var(--cor-secundaria) 1px solid;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    transition: all 0.3s ease-out;
+}
+
+#pagination-list > li > button:hover{
+    background-color: var(--cor-secundaria);
+    color: var(--cor-primaria);
+    cursor: pointer;
+}
+
+#pagination-list .inactive{
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+}
+
+#pagination-list .active{
+    background-color: var(--cor-secundaria);
+    color: var(--cor-primaria);
+}
